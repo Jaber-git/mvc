@@ -1,7 +1,7 @@
 <?php 
 
 include_once './registry/main.php';
-
+include_once './registry/objects/JController.php';
 new Main();
 
 echo "Hello I am jaber from index .<br/>";
