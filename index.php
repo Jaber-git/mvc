@@ -2,16 +2,14 @@
 
 include_once './registry/main.php';
 include_once './registry/objects/JController.php';
-new Main();
 
-echo "->Hello I am jaber from index .<br/>";
 
 $url=isset($_GET['url']) ? $_GET['url']: null ;
 
 if($url!=null){
     var_dump($url);
     $url=rtrim($url,'/');
-    $url=explode("/", $url);
+    $url=explode("/", filter_var($url,FILTER_SANITIZE_URL));
 }
 else{
     unset($url);
@@ -40,6 +38,10 @@ if(isset($url[0])){
                 $ctrlObj->$a($url[2]);
                 }
             }
+    } else{
+        include './controllers/index.php';
+    $default=new Index();
+    $default->home();
     }
 
 

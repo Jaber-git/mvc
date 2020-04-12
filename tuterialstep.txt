@@ -14,3 +14,14 @@ Fatal error: Uncaught Error: Class '' not found in F:\programs\xampp\htdocs\mvc\
 
 write-index.php
 first issue is solved  $url=isset($_GET['url']) ? $_GET['url']:NUll ;
+...........
+tuterial -5.....
+............
+পূর্বের লেসন এ আমরা দেখেছি, ইউআরল এর মাধ্যমে কন্ত্রলার লড করেছি।
+ উদাহরন- $url=isset($_GET['url'])
+ -এখন আমরা ডিফল্ট কন্ট্রলার লড করব।
+ OK WE CREATE index.php file in controller folder
+ it will work as default page
+ -now turn back to the views ,we will load our page that is views file
+ through controller method,same we will do to load model fiile.
+ core controller is used to load all file.
