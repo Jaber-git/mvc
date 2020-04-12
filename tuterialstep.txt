@@ -23,5 +23,39 @@ tuterial -5.....
  OK WE CREATE index.php file in controller folder
  it will work as default page
  -now turn back to the views ,we will load our page that is views file
- through controller method,same we will do to load model fiile.
+ through controller method,same we will do to load model fiile.clare
+
  core controller is used to load all file.
+ ........
+ tuterial-6......
+ ........
+ কোনো ক্লাস এর প্রপার্টিতে contructor এর মাধ্যমে object অব্জেক্ত রাখতে পারি
+পরে সুবিদামতো অই  class কে onno class এ extend kore proertye access korte pari
+machanism------>
+controller/index.php
+
+method home() এই মেথদ দিয়ে আরেক্তা ক্লাস এর মেথড এ যাব
+।
+public function home(){
+   $this->load->view("home");
+}
+controller/JController.php এ view("home") যে লডার ক্লাসের
+object তৈরি করব।
+
+protected $load=array();
+public function __construct(){
+
+   $this->load=new Registry();
+  }
+
+  registry/registry.class.php e.g loader class a 
+
+  public function view($fileName){
+		include './views/'.$fileName.'.php';
+	        }
+ dynamically load 
+ program flow....
+ index.php-to->controller/index.php-to-->controller/JController.php(main)---
+ to---> registry/registry.class.php(/views/'.$fileName.'.php')--to-->/views/home.php
+ in short
+ contollers->loader->views

@@ -1,10 +1,9 @@
 <?php
  class JController {
-
+protected $load=array();
 public function __construct(){
 
-echo "-> This is from JController to ctrl extended <br/>";
-
+   $this->load=new Registry();
   }
 
  }

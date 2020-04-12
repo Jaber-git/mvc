@@ -8,7 +8,7 @@ class Index extends JController{
         parent::__construct();
     }
 public function home(){
-    echo "Home content from index controller";
+   $this->load->view("home");
 }
 
 }

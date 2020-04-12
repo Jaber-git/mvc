@@ -1,7 +1,9 @@
 <?php 
 
 include_once './registry/main.php';
+include_once './registry/registry.class.php';
 include_once './registry/objects/JController.php';
+
 
 
 $url=isset($_GET['url']) ? $_GET['url']: null ;
