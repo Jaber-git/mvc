@@ -11,8 +11,8 @@ public function __construct(){
 
                  }
 
- public function getmethod(){
-    echo "->This is a method";
+ public function getmethod($param){
+    echo "->This is a method and param is $param";
     }
 
 }

@@ -1,0 +1,16 @@
+লেসন ৪ যদি আমরা http://localhost/mvc/ রান করি
+
+Notice: Undefined index: url in F:\programs\xampp\htdocs\mvc\index.php on line 9
+NULL
+url এর পারামেটার আমরা দেই নি।
+
+Warning: include(./controllers/.php): failed to open stream: No such file or directory in F:\programs\xampp\htdocs\mvc\index.php on line 16
+dynamically পারামেটার দিয়ে কন্ট্রলার পারামেটার দিয়ে ওপেন করার কথা ছিল।
+Warning: include(): Failed opening './controllers/.php' for inclusion (include_path='F:\programs\xampp\php\PEAR') in F:\programs\xampp\htdocs\mvc\index.php on line 16
+dynamically পারামেটার দিয়ে কন্ট্রলার পারামেটার দিয়ে ওপেন করার কথা ছিল।
+Fatal error: Uncaught Error: Class '' not found in F:\programs\xampp\htdocs\mvc\index.php:18 Stack trace: #0 {main} thrown in F:\programs\xampp\htdocs\mvc\index.php on line 18
+
+এর সমাধানে আমরা ternary condition use korbo
+
+write-index.php
+first issue is solved  $url=isset($_GET['url']) ? $_GET['url']:NUll ;
