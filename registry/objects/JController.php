@@ -3,7 +3,7 @@
 
 public function __construct(){
 
-echo "This is from JController to ctrl extended";
+echo "-> This is from JController to ctrl extended <br/>";
 
   }
 
