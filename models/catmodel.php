@@ -8,13 +8,18 @@ function __construct(){
 }
 
 public function catList(){
-    return $arrayName=array(
+    return array (
+        array(
         'catOne' =>'education',
         'catTwo' =>'sports',
-        'catThree' =>'jim'
-
-
-    );
+        'catThree' =>'jim'),
+        array (
+            'catOne' =>'education',
+            'catTwo' =>'sports',
+            'catThree' =>'jim')
+    
+    
+        );
 }
 
 }
