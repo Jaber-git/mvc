@@ -1,8 +1,13 @@
 <?php 
 
-include_once './registry/main.php';
-include_once './registry/registry.class.php';
-include_once './registry/objects/JController.php';
+include_once 'registry/main.php';
+include_once 'registry/registry.class.php';
+include_once 'registry/objects/JController.php';
+
+include_once 'registry/objects/DModel.php';
+
+include_once 'registry/databaseobjects/mysql.database.class.php';
+
 
 
 
@@ -20,7 +25,7 @@ else{
 //$controller= $url[0]."<br/>";  
 //dynamicaly object created
 if(isset($url[0])){
-    include './controllers/'.$url[0].'.php';
+    include 'controllers/'.$url[0].'.php';
     //include './controllers/'.$url[1].'.php';
     $ctrlObj=new $url[0]();
     if(isset($url[1])){
@@ -41,7 +46,7 @@ if(isset($url[0])){
                 }
             }
     } else{
-        include './controllers/index.php';
+        include 'controllers/index.php';
     $default=new Index();
     $default->home();
     }
