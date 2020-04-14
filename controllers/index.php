@@ -13,12 +13,19 @@ public function home(){
 
 }
 public function category(){
-$data     = array();
-$catModel = $this->load->model("CatModel");
-
-$data['cat'] = $catModel->catList();
-$this->load->view("category", $data);
-
+    $data     = array();
+    $table= "category";
+    $catModel = $this->load->model("CatModel");
+    $data['cat'] = $catModel->catList($table);
+    $this->load->view("category", $data);
+}
+public function catById(){
+    $data     = array();
+    $table    = "category";
+    $id       =3;
+    $catModel = $this->load->model("CatModel");
+    $data['catbyid'] = $catModel->catById($table,$id);
+    $this->load->view("catbyid", $data);
+    }
 }
 
-}
