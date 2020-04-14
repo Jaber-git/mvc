@@ -59,3 +59,10 @@ public function __construct(){
  to---> registry/registry.class.php(/views/'.$fileName.'.php')--to-->/views/home.php
  in short
  contollers->loader->views
+
+
+ ..............
+ tuterial-7....
+ .............
+ tuterial 6 এ আমরা ভিউ এর এক টা ফাইল কে contollers->loader এর মাধ্যমে ডিসপ্লে করিইয়েছি।
+ ্লড ক্লাস এ file  include করে এক্তা অব্জেচক্ট তৈরি করলাম

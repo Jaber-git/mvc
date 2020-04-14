@@ -25,8 +25,8 @@ if(isset($url[0])){
     $ctrlObj=new $url[0]();
     if(isset($url[1])){
         $string = str_replace(' " ', " ", $url[1]);  
-        $ctrlObj->$string($url[2]);
-         var_dump($url[1]);
+        $ctrlObj->$string($url[1]);
+         
 
             }
             else{
