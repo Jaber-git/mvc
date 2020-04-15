@@ -1,5 +1,5 @@
 <div>
-category List <hr/> <br/>
+category by Id List <hr/> <br/>
 <?php
 
 foreach($catbyid as $key => $value){
