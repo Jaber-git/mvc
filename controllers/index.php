@@ -27,5 +27,15 @@ public function catById(){
     $data['catbyid'] = $catModel->catById($table,$id);
     $this->load->view("catbyid", $data);
     }
+    public function insertCategory(){
+        $table    = "category";
+         $data     = array(
+                  'name'=>'Technology',
+                  'title'=>'Technology'
+                 );   
+        $catModel =$this->load->model("CatModel");
+        $catModel->insertCat($table,$data);
+    }
+
 }
 

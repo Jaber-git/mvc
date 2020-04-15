@@ -25,5 +25,8 @@ $data=array(":id"=> $id);
 return $this->db->select($sql,$data);
 
     }
+    public function insertCat($table,$data){
+        return $this->db->insert($table,$data);
+    }
 
 }
