@@ -8,7 +8,7 @@
     protected $db=array();
 
     public function __construct(){
-        $dsn  = "mysql:dbname=bd_mvc;host=localhost";
+        $dsn  = "mysql:dbname=db_mvc;host=localhost";
         $user = "root";
         $pass  = "";
        

@@ -27,14 +27,32 @@ public function catById(){
     $data['catbyid'] = $catModel->catById($table,$id);
     $this->load->view("catbyid", $data);
     }
+
+ public function addCategory(){
+    $this->load->view("addCategory");
+
+ }
+
     public function insertCategory(){
         $table    = "category";
+            $name= $_POST['name'];
+            $title= $_POST['title'];
+
          $data     = array(
-                  'name'=>'Technology',
-                  'title'=>'Technology'
+                  'name'=>$name,
+                  'title'=>$title
                  );   
         $catModel =$this->load->model("CatModel");
-        $catModel->insertCat($table,$data);
+        $result=$catModel->insertCat($table,$data);
+
+        $mdata=array();
+        if($result== 1){
+         $mdata['msg']="category added succesfully";
+        }else{
+            $mdata['msg']="Not added succesfully";
+
+        }
+        $this->load->view("addCategory",$mdata);
     }
 
 }
