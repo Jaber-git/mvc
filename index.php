@@ -1,12 +1,14 @@
 <?php 
+spl_autoload_register(function($class){
 
-include_once 'registry/main.php';
-include_once 'registry/registry.class.php';
-include_once 'registry/objects/JController.php';
+include_once "lib/".$class.".php";
+     });
 
-include_once 'registry/objects/DModel.php';
+    
 
-include_once 'registry/databaseobjects/mysql.database.class.php';
+
+
+
 
 
 
