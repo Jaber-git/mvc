@@ -17,21 +17,33 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
+<?php 
+foreach($allPost as $key => $value) { ?>
 
   <div class="w3-card-4 w3-margin w3-white">
     <img src="img/woods.jpg" alt="Nature" style="width:100%">
     <div class="w3-container">
-      <h3><b>TITLE HEADING</b></h3>
+      <h3><b><a href="<?php echo BASE_URL; ?>/index/postDetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?> </a></b></h3>
       <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
     </div>
 
     <div class="w3-container post">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="readmore"><a href="#">Read more..</div>
+      <p>
+      <?php
+      
+      $text= $value['content'];
+      if(strlen($text)>200){
+        $text=substr($text,0,200);
+        echo $text;
+      }
+      
+      ?>
+      
+      </p>
+      <div class="readmore"> <a  href="<?php echo BASE_URL;?>/index/postDetails/ <?php echo $value['id'];?>">Read more..</a></div>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><a  href="<?php echo BASE_URL;?>/index/postDetails/ <?php echo $value['id'];?>">READ MORE »</a></b></button></p>
         </div>
         <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
@@ -40,6 +52,9 @@ and is wrapped around the whole page content, except for the footer in this exam
     </div>
 
   </div>
+
+  <?php } ?>
+
   <hr>
 
   <!-- Blog entry -->

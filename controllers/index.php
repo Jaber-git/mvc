@@ -10,9 +10,18 @@ class Index extends JController{
 
 public function home(){
    $this->load->view("header");
-   $this->load->view("content");
+      $data      = array();
+      $table     = "post";
+      $postModel = $this->load->model("PostModel");
+      $data['allPost'] = $postModel->getAllPost($table);
+ 
+   $this->load->view("content",$data);
    $this->load->view("sidebar");
    $this->load->view("footer");
+       }
+
+       public function postDetails(){
+
        }
 
 }

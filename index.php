@@ -3,14 +3,10 @@ spl_autoload_register(function($class){
 
 include_once "lib/".$class.".php";
      });
+     
+include_once "config/config.php";
 
     
-
-
-
-
-
-
 
 
 $url=isset($_GET['url']) ? $_GET['url']: null ;
