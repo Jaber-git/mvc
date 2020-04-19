@@ -14,6 +14,8 @@
        
       $this->db = new Database($dsn, $user, $pass);  
     }
+
+    
    
 
  }
