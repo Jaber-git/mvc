@@ -43,8 +43,12 @@ class Database extends PDO{
             $stmt->bindParam(":$key",$value);
            }
          return $stmt->execute();
+        }
 
-     }
+  public function delete($table,$cond,$limit=1){
+            $sql="DELETE FROM $table WHERE $cond LIMIT $limit";
+            return $this->exec($sql);
+        }
 
 
            

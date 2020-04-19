@@ -28,6 +28,17 @@
       $this->load->view("addCategory");
   
    }
+   public function updateCategory(){
+    
+     $data      = array();
+      $table    = "category";
+      $id       = 6;
+      $catModel = $this->load->model("CatModel");
+      $data['catbyid'] = $catModel->catById($table,$id);
+      //$this->load->view("catbyid", $data);
+      $this->load->view("catupdate",$data);
+
+ }
   
       public function insertCategory(){
           $table    = "category";
@@ -53,16 +64,36 @@
       public function updateCat(){
 
         $table = "category";
-        $cond  = "id=1";
+        $id    = $_POST['id'];
+        $name  = $_POST['name'];
+        $title = $_POST['title'];
+
+        $cond  = "id=$id";
         $data  = array(
-            'name'=>'coding',
-            'title'=>'coding'
-             );
-        $catModel=$this->load->model("CatModel");
-        $catModel->catUpdate($table,$data,$cond);
+                    'name'=>$name,
+                    'title'=>$title
+                   );  
+                   
+        
+        $catModel = $this->load->model("CatModel");
+        $result   =  $catModel->catUpdate($table,$data,$cond);
 
-
+        $mdata    =array();
+          if($result== 1){
+           $mdata['msg']="category updated succesfully";
+          }else{
+              $mdata['msg']="Not updated succesfully";
+  
+          }
+          $this->load->view("catupdate",$mdata);
       }
+public function deleteCatById(){
+    $table   ="category";
+    $cond     ="id=7";
+    $catModel =$this->load->model("CatModel");
+    $catModel->delCatById($table,$cond);
+
+}
   
  }
 
