@@ -1,84 +1,23 @@
-
-<body class="w3-light-grey">
-
-<!-- w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
-
-<!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>MY BLOG</b></h1>
-  <p>Welcome to the blog of <span class="w3-tag">unknown</span></p>
-</header>
-
-<!-- Grid -->
-<div class="w3-row">
-
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-<?php 
-foreach($allPost as $key => $value) { ?>
-
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="img/woods.jpg" alt="Nature" style="width:100%">
-    <div class="w3-container">
-      <h3><b><a href="<?php echo BASE_URL; ?>/index/postDetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?> </a></b></h3>
-      <h5>Title description, <span class="w3-opacity">April 7, 2014</span></h5>
-    </div>
-
-    <div class="w3-container post">
-      <p>
-      <?php
-      
-      $text= $value['content'];
-      if(strlen($text)>200){
-        $text=substr($text,0,200);
-        echo $text;
-      }
-      
-      ?>
-      
-      </p>
-      <div class="readmore"> <a  href="<?php echo BASE_URL;?>/index/postDetails/ <?php echo $value['id'];?>">Read more..</a></div>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b><a  href="<?php echo BASE_URL;?>/index/postDetails/ <?php echo $value['id'];?>">READ MORE »</a></b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
-        </div>
-      </div>
-    </div>
-
+<div class="content">
+Home <hr>
+<article class="postcontent">
+<?php
+foreach($allPost as $key => $value){
+?>
+   <div class="post">
+      <h2><a href="<?php echo BASE_URL?>/Index/postDetetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?></a></h2>
+      <p><?php
+      $text=$value['content'];
+    if (strlen($text)>200){
+      $text= substr($text,0,2000);
+      echo $text;
+    }
+      ?></p>
+        <div class="readmore"> <a href="<?php echo BASE_URL?>/Index/postDetails/ <?php echo $value['id'];?>">Read more</a></div>
   </div>
+<?php } ?>
 
-  <?php } ?>
-
-  <hr>
-
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="img/bridge.jpg" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>BLOG ENTRY</b></h3>
-      <h5>Title description, <span class="w3-opacity">April 2, 2014</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed
-        tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
-        </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
+  
 
 
+</article>

@@ -1,10 +1,18 @@
+</div>
 
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+  <footer class="footeroption">
+	  <section class="footerone">
+	  <p>Md jaber Hussain</p>
+	  <p>Web Developer,</p>
+	  <p>PHP and Java</p>
+	  
+	  </section>
+	  <section class="footerone">
+		  <p>Like us: facebook.com/jaber</p>
+		  <p>Join us: facebook.com/groups/PBPTBD</p>
+		  <p>Web: www.jaberwindow.com</p>
+	  </section>
+  </footer>
 
 </body>
 </html>
