@@ -2,7 +2,7 @@
  <div class="searchoption">
 
           <div class="menu">
-            <a href="#">Home  </a>
+            <a href="<?php echo BASE_URL; ?>">Home  </a>
           </div>
       <div class="search">
           <form action="#" method="post">
@@ -10,10 +10,12 @@
 
             <select class="catsearch" >
                 <option value="">select one</option>
-                <option value="">category one </option>
-                <option value="">category two</option>
-                <option value="">category three</option>
-            </select>
+                <?php 
+                foreach($catlist as $key => $cat){ ?>
+                <option value=" <?php echo $cat['id']?>"><?php echo $cat['name']?> </option>
+                <?php } ?>
+                </select>
+                
             <button class="submitbtn" type="submit">search </button>
 
             </form>

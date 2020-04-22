@@ -22,4 +22,4 @@ foreach($getcat as $key => $value){
 
 
 </article>
-</div>
+

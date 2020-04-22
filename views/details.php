@@ -22,7 +22,7 @@ foreach($postbyid as $key => $value){
 <?php } ?>
 
 </article>
-</div>
+
 
 
 

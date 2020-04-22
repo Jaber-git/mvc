@@ -9,65 +9,64 @@ class Index extends JController{
     }
 
 public function home(){
+   $tableCat= "category";
+    $tablePost="post";
+    $data=array();
+
    $this->load->view("header");
-   $this->load->view("search");
-      $data      = array();
-      $table     = "post";
 
-      $postModel = $this->load->model("PostModel");
-      
-      $data['allPost'] = $postModel->getAllPost($table);
-       $this->load->view("content",$data);
+   $catModel = $this->load->model("CatModel");
+   $data['catlist'] = $catModel->catList($tableCat);
+   $this->load->view("search",$data);
+   
+   $postModel = $this->load->model("PostModel");
+   $data['allPost'] = $postModel->getAllPost($tablePost);
+   $this->load->view("content",$data);
        
-
-      $tableCat= "category";
-      $catModel = $this->load->model("CatModel");
-      $data['catlist'] = $catModel->catList($tableCat);
-      $data['latestPost'] = $postModel->getLatestPost($table);
+   // $data['catlist'] = $catModel->catList($tableCat); no need to declare two times
+    $data['latestPost'] = $postModel->getLatestPost($tablePost);
     
     $this->load->view("sidebar",$data);
-
     $this->load->view("footer");
        }
 
    public function postDetails($id){
-        $this->load->view("header");
-        $this->load->view("search");
-        $data=array();
-        $tablePost="post";
-        $tableCat="category";
-        $postModel=$this->load->model('postModel');
-        $data['postbyid']=$postModel->getPostById($tablePost,$tableCat,$id);
-        
-        $this->load->view("details", $data);
+    $tableCat= "category";
+    $tablePost="post";
+    $data=array();
 
-       
-        $catModel = $this->load->model("CatModel");
-        $data['catlist'] = $catModel->catList($tableCat);
-        
-        $data['latestPost'] = $postModel->getLatestPost($tablePost);
-    
-        $this->load->view("sidebar",$data);
-        $this->load->view("footer");
+    $this->load->view("header");
+
+    $catModel = $this->load->model("CatModel");
+    $data['catlist'] = $catModel->catList($tableCat);
+    $this->load->view("search",$data);
+   
+    $postModel=$this->load->model('postModel');
+    $data['postbyid']=$postModel->getPostById($tablePost,$tableCat,$id);
+    $this->load->view("details", $data);
+
+    $data['latestPost'] = $postModel->getLatestPost($tablePost);
+     $this->load->view("sidebar",$data);
+     $this->load->view("footer");
        }
 
   public function postByCat($id){
-        $this->load->view("header");
-        $this->load->view("search");
-        $data=array();
-        $tablePost="post";
-        $tableCat="category";
-        $postModel=$this->load->model('postModel');
-        $data['getcat']=$postModel->getPostByCat($tablePost,$tableCat,$id);
+    $tableCat= "category";
+    $tablePost="post";
+    $data=array();
+
+    $this->load->view("header");   
+    $catModel = $this->load->model("CatModel");
+    $data['catlist'] = $catModel->catList($tableCat);
+    $this->load->view("search",$data);   
+
+     $postModel=$this->load->model('postModel');
+     $data['getcat']=$postModel->getPostByCat($tablePost,$tableCat,$id);
+     $this->load->view("postbycat",$data);
        
-        $this->load->view("postbycat",$data);
-       
-        $catModel = $this->load->model("CatModel");
-        $data['catlist'] = $catModel->catList($tableCat);
-        
-        $data['latestPost'] = $postModel->getLatestPost($tablePost);
-        $this->load->view("sidebar",$data);
-        $this->load->view("footer");
+    $data['latestPost'] = $postModel->getLatestPost($tablePost);
+    $this->load->view("sidebar",$data);
+    $this->load->view("footer");
 
     }
       
