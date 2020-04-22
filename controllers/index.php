@@ -10,26 +10,29 @@ class Index extends JController{
 
 public function home(){
    $this->load->view("header");
+   $this->load->view("search");
       $data      = array();
       $table     = "post";
+
       $postModel = $this->load->model("PostModel");
+      
       $data['allPost'] = $postModel->getAllPost($table);
        $this->load->view("content",$data);
+       
 
       $tableCat= "category";
       $catModel = $this->load->model("CatModel");
       $data['catlist'] = $catModel->catList($tableCat);
-    $data['latestPost'] = $postModel->getLatestPost($table);
-    
+      $data['latestPost'] = $postModel->getLatestPost($table);
     
     $this->load->view("sidebar",$data);
 
-     $this->load->view("footer");
+    $this->load->view("footer");
        }
 
-       public function postDetails($id){
+   public function postDetails($id){
         $this->load->view("header");
-
+        $this->load->view("search");
         $data=array();
         $tablePost="post";
         $tableCat="category";
@@ -48,9 +51,9 @@ public function home(){
         $this->load->view("footer");
        }
 
-    public function postByCat($id){
+  public function postByCat($id){
         $this->load->view("header");
-
+        $this->load->view("search");
         $data=array();
         $tablePost="post";
         $tableCat="category";

@@ -51,6 +51,13 @@ padding-right:20px;overflow:hidden;}
 .desc{}
 .desc p{line-height:24px; text-align:justify;}
 
+.searchoption {border-bottom: 2px dashed #3399ff; margin-bottom:30px; padding-bottom:20px; overflow:hidden;}
+.menu{ float:left;font-size:18px; margin-top:10px;}
+.menu a{text-decoration:none;background:#f2f2f2;border:1px solid #999;color:#666;padding:2px 10px;}
+.search{float:right;}
+.catsearch{cursor:pointer;border: 1px solid #ddd;font-size:16px;margin-bottom:5px;padding:5px;width:228px;}
+.submitbtn{cursor:pointer;font-size:16px;padding:3px 10px;}
+
 .footeroption{height:90px;background:#177de3;overflow:hidden;padding-top:10px;}
 .footerone {background: #3aa0ff;border-radius: 5px;float: left;font-size:18px;line-height:23px;margin-left: 10px;padding:6px 10px;text-align:center;text-shadow: 1px 0 2px #fff;width:390px;overflow: hidden;}
 .footerone p{margin:0;}
@@ -62,3 +69,6 @@ padding-right:20px;overflow:hidden;}
     <h2>Advanced PHP OOP Tutorial [MVC Framework]</h2>
 	
   </header>
+  <div class="content">
+
+ 

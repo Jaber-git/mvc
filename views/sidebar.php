@@ -1,6 +1,6 @@
-<aside class="sidebar">
-  <div class="widget">
-  <h2>Category</h2>
+ <aside class="sidebar">
+   <div class="widget">
+   <h2>Category</h2>
     <ul>
      <?php
        foreach($catlist as $key => $value){
@@ -15,18 +15,19 @@
 
     </ul>
   
-  </div>
+   </div>
         
-  <div class="widget">
-  <h2>Latest Post</h2>
-    <ul>
-    <?php
+   <div class="widget">
+    <h2>Latest Post</h2>
+     <ul>
+     <?php
        foreach($latestPost as $key => $value){
          ?>
-      <li> <a href="<?php echo BASE_URL;?>/Index/postDetetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?></a></li>
+        <li> <a href="<?php echo BASE_URL;?>/Index/postDetetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?></a></li>
       
       <?php } ?> 
     </ul>
   
+    </div>
+   </aside>
   </div>
- </aside>

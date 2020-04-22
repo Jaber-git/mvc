@@ -1,5 +1,5 @@
-<div class="content">
-Home <hr>
+
+
 <article class="postcontent">
 <?php
 foreach($allPost as $key => $value){
@@ -16,8 +16,5 @@ foreach($allPost as $key => $value){
         <div class="readmore"> <a href="<?php echo BASE_URL?>/Index/postDetails/ <?php echo $value['id'];?>">Read more</a></div>
   </div>
 <?php } ?>
-
-  
-
 
 </article>

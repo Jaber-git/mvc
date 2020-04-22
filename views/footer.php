@@ -1,3 +1,4 @@
+
 </div>
 
   <footer class="footeroption">
@@ -8,8 +9,8 @@
 	  
 	  </section>
 	  <section class="footerone">
-		  <p>Like us: facebook.com/jaber</p>
-		  <p>Join us: facebook.com/groups/PBPTBD</p>
+		  <p>Like us: facebook.com</p>
+		  <p>Join us: facebook.com/</p>
 		  <p>Web: www.jaberwindow.com</p>
 	  </section>
   </footer>

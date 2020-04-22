@@ -1,5 +1,5 @@
 
-<div class="content">
+
 Post Details <hr>
 <article class="postcontent">
 <?php
@@ -21,10 +21,8 @@ foreach($postbyid as $key => $value){
   </div>
 <?php } ?>
 
-  
-
-
 </article>
+</div>
 
 
 

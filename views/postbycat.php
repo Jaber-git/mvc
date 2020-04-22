@@ -1,5 +1,5 @@
-<div class="content">
-Home <hr>
+
+
 
 <article class="postcontent">
 
@@ -7,6 +7,7 @@ Home <hr>
 foreach($getcat as $key => $value){
 ?>
    <div class="post">
+   <div class="title"></div>
       <h2><a href="<?php echo BASE_URL;?>/Index/postDetetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?></a></h2>
       <p><?php
       $text=$value['content'];
@@ -21,3 +22,4 @@ foreach($getcat as $key => $value){
 
 
 </article>
+</div>
