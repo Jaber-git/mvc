@@ -69,6 +69,29 @@ public function home(){
     $this->load->view("footer");
 
     }
+
+    public function search(){
+        $tableCat= "category";
+        $tablePost="post";
+        $keyword  = $_REQUEST['keyword'];
+        $cat      = $_REQUEST['cat'];
+        $data=array();
+    
+        $this->load->view("header");   
+        $catModel = $this->load->model("CatModel");
+        $data['catlist'] = $catModel->catList($tableCat);
+        $this->load->view("search",$data);   
+    
+         $postModel=$this->load->model('postModel');
+         $data['postbysearch']=$postModel->getPostBySearch($tablePost,$keyword,$cat);
+         $this->load->view("sresult",$data);
+           
+        $data['latestPost'] = $postModel->getLatestPost($tablePost);
+        $this->load->view("sidebar",$data);
+        $this->load->view("footer");
+    
+
+    }
       
 
 }

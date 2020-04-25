@@ -58,8 +58,19 @@ public function getPostById($tablePost,$tableCat,$id){
     ON $tablePost.cat = $tableCat.id
     where $tableCat.id = $id";
 
-$a=$this->db->select($sql);
-//var_dump($a);
-return $a;
- }
+        $a=$this->db->select($sql);
+        //var_dump($a);
+        return $a;
+     }
+ public function  getPostBySearch($tablePost,$keyword,$cat){
+  if(isset($keyword) && !empty($keyword)){
+    $sql= "SELECT * FROM $tablePost WHERE title LIKE
+     '%$keyword%' OR content LIKE ' %$keyword%'" ;
+     
+          }elseif(isset($cat)){
+            $sql= "SELECT * FROM $tablePost 
+            where cat=$cat";
+          }
+        return  $this->db->select($sql);
+     }
 }

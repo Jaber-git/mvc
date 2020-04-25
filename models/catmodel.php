@@ -37,4 +37,5 @@ public function catUpdate($table,$data,$cond){
  public function delCatById ( $table, $cond){
     return  $this->db->delete($table,$cond);
       }
+
 }

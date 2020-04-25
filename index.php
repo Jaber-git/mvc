@@ -20,42 +20,32 @@ else{
     unset($url);
 }
 
-//$controller= $url[0]."<br/>";  
-//dynamicaly object created
-if(isset($url)){
+if(isset($url[0])){
+      include 'controllers/'.$url[0].'.php';
     
-   /**  echo "this is $url[2].'<br>'";
-     *    echo $url[1];
-     *    var_dump($url) ;
-     */
-    
-    include 'controllers/'.$url[0].'.php';
-    //include './controllers/'.$url[1].'.php';
-      $ctrlObj=new $url[0]();
-   /** 
-   *  echo "<br>";
-   * echo "<br>";
-   * var_dump($ctrlObj) ;
-   * echo "this is url1 <br>";
-   *  echo $url[1] ;
-   */
-   
- //dynamically created method with parameter
-            $a = $url[1];
-           
-        $ctrlObj->$a($url[2]);
-         
-       
-    } 
-    else{
-       
-        include 'controllers/Index.php';
-    $default=new Index();
-    $default->home();
-    }
+       $ctrlObj=new $url[0]();
+     if(isset($url[2])){
+    //dynamically created method with parameter
+         $a = $url[1];
+         $ctrlObj->$a($url[2]);
+             }  else{
+                     if(isset($url[1])){  
+                         $b = $url[1];
 
-
-//$method= $url[1]."<br/>"; 
-//$param= $url[2]."<br/>"; 
-
-?>
+                        $ctrlObj->$b();;
+                  }
+           }
+        
+     } 
+     else{
+        
+         include 'controllers/Index.php';
+     $default=new Index();
+     $default->home();
+     }
+ 
+ 
+ //$method= $url[1]."<br/>"; 
+ //$param= $url[2]."<br/>"; 
+ 
+ ?>

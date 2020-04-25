@@ -23,7 +23,7 @@
      <?php
        foreach($latestPost as $key => $value){
          ?>
-        <li> <a href="<?php echo BASE_URL;?>/Index/postDetetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?></a></li>
+        <li> <a href="<?php echo BASE_URL;?>/Index/postDetails/ <?php echo $value['id'];?>"><?php echo $value['title'];?></a></li>
       
       <?php } ?> 
     </ul>
