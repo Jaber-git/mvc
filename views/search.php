@@ -2,7 +2,7 @@
  <div class="searchoption">
 
           <div class="menu">
-            <a href="<?php echo BASE_URL; ?>/">Home  </a>
+            <a href="<?php echo BASE_URL; ?>">Home  </a>
           </div>
       <div class="search">
           <form action="<?php echo BASE_URL; ?>Index/search" method="post">
