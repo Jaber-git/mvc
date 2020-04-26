@@ -10,8 +10,8 @@
   public function view($fileName,$data=false){
 	  if($data==true){
 		  extract($data);
-	  }
-		include './views/'.$fileName.'.php';
+	       }
+  include 'views/'.$fileName.'.php';
 	        }
  
   public function model($modelName){
