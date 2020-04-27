@@ -5,10 +5,12 @@ class Admin extends JController{
 public function __construct(){
     parent::__construct();
    }
-public function login(){
-    $this->load->view("login");
+ public function Index(){
+       $this->admin();
+   }
+public function admin(){
+    $this->load->view('admin/admin');
 }
-
 
 }
 

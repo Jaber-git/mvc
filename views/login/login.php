@@ -75,7 +75,7 @@ box-shadow:5px 5px 5px #999;padding:20px;
   <div class="content">
   login <hr/>
     <div class="loginform">
-        <form action="" method="post">
+        <form action="<?Php echo BASE_URL;?>/login/logAuth" method="post">
         <table>
             <tr>
                <td>Username</td>
@@ -83,11 +83,11 @@ box-shadow:5px 5px 5px #999;padding:20px;
             </tr>
             <tr>
                <td>password</td>
-               <td><input type="password" name="submit" placeholder="password.."/></td>
+               <td><input type="password" name="password" placeholder="password.."/></td>
             </tr>
             <tr>
                <td></td>
-               <td><input type="submit" name="username" value="login"/></td>
+               <td><input type="submit" name="submit" value="login"/></td>
             </tr>
         </table>
         </form>
