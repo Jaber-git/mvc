@@ -3,15 +3,9 @@
  
  
 
-
-<?php
-
- if (isset($msg)){
-     echo "<span style='color:blue;font-weight:bold;'>".$msg."</span>";
- }
-  ?>
+   
 <!--insertCategory method in index controller is action page-->
- <form action="http://localhost/mvc/Category/insertCategory" method="post">
+ <form action="<?php echo BASE_URL;?>/Admin/insertCategory" method="post">
  <table>
    
         <label for="name">Category Name:</label><br>
