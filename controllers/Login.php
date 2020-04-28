@@ -5,10 +5,14 @@ class Login extends JController{
 public function __construct(){
     parent::__construct();
    }
-   public function Index(){
+public function Index(){
        $this->login();
    }
 public function login(){
+    Session::init();
+    if(Session::get('login')==true){
+        header("Location:".BASE_URL."/Admin");   
+    }
     $this->load->view("login/login");
 }
 public function logAuth(){
@@ -25,14 +29,20 @@ public function logAuth(){
      // print_r($result);
      // echo $result[0]['username'];
       Session::init();
+      Session::set("login", true) ;
       Session::set("username", $result[0]['username']);
       Session::set("userId", $result[0]['id']) ;
      // echo Session::get('userId');
-     header('Location:http://localhost/mvc/Admin');
+     header("Location:".BASE_URL."/Admin");
   
     } else{
-     header('location: http://localhost/mvc/Login');
+     header("Location:".BASE_URL."/Login");
         }
 
-   }
+    }
+    public function logout(){
+        Session::init();
+        Session::destroy();
+        header("Location:".BASE_URL."/Login");
+    }
 }
