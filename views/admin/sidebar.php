@@ -16,8 +16,8 @@
   <div class="widget">
   <h3>Post Option</h3>
     <ul>
-        <li> <a href="http://">Add article</a> </li>
-        <li> <a href="http://">Article list</a> </li>
+        <li> <a href="<?php echo BASE_URL;?>/Admin/addArticle">Add article</a> </li>
+        <li> <a href="<?php echo BASE_URL;?>/Admin/articleList">Article list</a> </li>
     </ul>
   </div>
   

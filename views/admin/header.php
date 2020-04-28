@@ -25,8 +25,9 @@ a{color:#3399FF;}
 table.tblone tr:nth-child(2n+1){background:#fff;height:30px;}
 table.tblone tr:nth-child(2n){background:#fdf0f1;height:30px;}
 
-input[type="text"],input[type="password"] {border:1px solid #ddd;margin-bottom:5px;padding:5px;width:228px;font-size:16px}
+input[type="text"], input[type="password"] {border:1px solid #ddd;margin-bottom:5px;padding:5px;width:228px;font-size:16px}
 input[type="submit"]{cursor: pointer}
+.cat {border:1px solid #ddd;margin-bottom:5px;padding:5px;width:228px;font-size:16px;cursor:pointer;}
 
 .postcontent{ width:560px;border-right:1px solid #ddd;float:left;margin-right:19px;
  padding-right:20px;overflow:hidden;}

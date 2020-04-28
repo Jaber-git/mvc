@@ -117,6 +117,27 @@ public function deleteCat($id=NULL){
   header("Location:$url"); 
    }
 
+   public function addArticle(){
+    $this->load->view('admin/header');
+    $this->load->view('admin/sidebar');
+    $this->load->view('admin/addPost');
+    $this->load->view('admin/footer');
+   }
+   public function articleList(){
+    $tableCat = "category";
+    $tablePost = "post";
+    $this->load->view('admin/header');
+    $this->load->view('admin/sidebar');
+    $postModel = $this->load->model("PostModel");
+    $data['listPost'] = $postModel->getPostList($tablePost);
+   
+    $catModel = $this->load->model("CatModel");
+    $data['catlist'] = $catModel->catList($tableCat);
+    
+    $this->load->view('admin/postList',$data);
+    $this->load->view('admin/footer');
+}
+
 }
 
 

@@ -17,6 +17,11 @@ public function getAllPost($table){
        $sql="select * from $table order by id desc limit 3";
      return $this->db->select($sql);
     }
+    public function getPostList($table){
+    $sql="select * from $table order by id desc ";
+    return $this->db->select($sql);
+   }
+
 
 public function getPostById($tablePost,$tableCat,$id){
     //join query from to table
