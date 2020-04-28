@@ -9,8 +9,8 @@
   <div class="widget">
   <h3>Category Option</h3>
     <ul>
-        <li> <a href="http://">Add Category</a> </li>
-        <li> <a href="http://">category List</a> </li>
+        <li> <a href="<?php echo BASE_URL;?>/Admin/addCategory">Add Category</a> </li>
+        <li> <a href="<?php echo BASE_URL;?>/Admin/categoryList">category List</a> </li>
     </ul>
   </div>
   <div class="widget">
@@ -22,4 +22,5 @@
   </div>
   
   </aside>
+  <article class="adminright">
   
