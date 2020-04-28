@@ -118,16 +118,52 @@ public function deleteCat($id=NULL){
    }
 
    public function addArticle(){
+       $tableCat="category";
     $this->load->view('admin/header');
     $this->load->view('admin/sidebar');
-    $this->load->view('admin/addPost');
+
+    $catModel       = $this->load->model("CatModel");
+    $data['catlist'] = $catModel->catList($tableCat);
+    
+    $this->load->view('admin/addPost',$data);
     $this->load->view('admin/footer');
+   }
+   public function addNewPost(){
+    $tablePost="post";
+    if(!$_POST['submit']){
+        header("Location:".BASE_URL."/Admin");
+    }else{
+
+    $title   = $_POST['title'];
+    $content = $_POST['content'];
+    $cat     = $_POST['cat'];
+
+     $data     = array(
+              'title'   =>$title,
+              'content' =>$content,
+              'cat'     =>$cat
+             );   
+    $catModel = $this->load->model("PostModel");
+    $result   = $catModel->insertPost($tablePost,$data);
+
+    $mdata=array();
+
+    if($result== 1){
+     $mdata['msg']="Article added succesfully";
+    }else{
+        $mdata['msg']="Article Not added succesfully";
+
+    }
+    $url=BASE_URL."/Admin/articleList?msg=".urlencode(serialize($mdata));
+    header("Location:$url");
+ }
    }
    public function articleList(){
     $tableCat = "category";
     $tablePost = "post";
     $this->load->view('admin/header');
     $this->load->view('admin/sidebar');
+    
     $postModel = $this->load->model("PostModel");
     $data['listPost'] = $postModel->getPostList($tablePost);
    

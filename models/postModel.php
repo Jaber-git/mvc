@@ -78,4 +78,9 @@ public function getPostById($tablePost,$tableCat,$id){
           }
         return  $this->db->select($sql);
      }
+
+   public function insertPost($table,$data){
+     return $this->db->insert($table,$data);
+   }
+
 }

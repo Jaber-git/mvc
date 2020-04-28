@@ -4,6 +4,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 <h2>article List</h2>
+<?php
+if(!empty($_GET['msg'])){
+  $msg=unserialize(urldecode($_GET['msg']));
+  foreach($msg as $key=>$value){
+    echo "<span style='color:blue;font-weight:bold;'>".$value."</span>";
+
+  }
+}
+ 
+  ?>
 <table id="mytable_id" class="dispaly" data-order='[[1,"asc"]]' data-page-length='5'>
    <thead>
     <tr>

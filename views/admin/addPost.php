@@ -1,14 +1,15 @@
 <script src="http://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
 <h2>Add new Article</h2>
- 
+
    
  <!--insertCategory method in index controller is action page-->
-  <form action="<?php echo BASE_URL;?>/Admin/insertCategory" method="post">
+  <form action="<?php echo BASE_URL;?>/Admin/addNewPost" method="post">
   <table>
     
         <tr>
         <td>Title</td>
-        <td><input type="text" id="fname" name="name"><br></td>
+        <td><input id="postinput" type="text" id="fname" name="title"><br></td>
         </tr>
          
         <tr>
@@ -24,8 +25,12 @@
         <td>  
             <select name="cat" class="cat" id="">
                 <option >Select One</option>
-                <option value="1">Category one </option>
-                <option value="2">Category one </option>
+               <?php foreach($catlist as $key =>$cat){?>
+                <option value="<?php echo $cat['id'] ;?>">
+                <?php echo $cat['name'] ;?>
+              
+                </option>
+                  <?php }?>
             </select>
         </td>
         </tr>
