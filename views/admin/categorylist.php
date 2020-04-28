@@ -27,8 +27,8 @@ foreach($cat as $key => $value){
         <td><?php echo $value['name'];?> </td>
         <td><?php echo $value['title'];?></td>
         <td>
-            <a href="<?php echo BASE_URL;?>/Admin/editCat">Edit</a>
-           <a href="<?php echo BASE_URL;?>/Admin/deleteCat"">Delete</a>
+            <a href="<?php echo BASE_URL;?>/Admin/editCat/<?php echo $value['id'];?>">Edit</a>  ||
+           <a onclick="return confirm('Are you sure to delete!');"href="<?php echo BASE_URL;?>/Admin/deleteCat/<?php echo $value['id'];?>">Delete</a>
         </td>
 
 
