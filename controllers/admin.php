@@ -12,7 +12,10 @@ public function __construct(){
 public function admin(){
     $this->load->view('admin/header');
     $this->load->view('admin/sidebar');
-    $this->load->view('admin/admin');
+  // $data['user']=array(
+  //     'username' => Session::get('username')
+  // );
+    $this->load->view('admin/admin',);
     $this->load->view('admin/footer');
    }
    public function addCategory(){
@@ -130,6 +133,11 @@ public function deleteCat($id=NULL){
    }
 
    public function addNewPost(){
+   //IF YOU TYPE URL admin/addarticle,see error
+   //to solve use if-ele
+    if(!($_POST)){
+        header("Location:".BASE_URL."/Admin/addArticle");
+    }
     $tablePost="post";
    $input= $this->load->validation("JForm");
    $input->post('title')
