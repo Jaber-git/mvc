@@ -22,7 +22,11 @@ public function getAllPost($table){
     return $this->db->select($sql);
    }
 
+public function  PostByid($tablePost,$id){
 
+    $sql="select * from $tablePost where id=$id";
+    return $this->db->select($sql);
+   }
 public function getPostById($tablePost,$tableCat,$id){
     //join query from to table
 

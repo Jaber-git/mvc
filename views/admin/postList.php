@@ -48,8 +48,11 @@ if(!empty($_GET['msg'])){
         echo $value['cat'];
         ?></td>
         <td>
-        <a href="http://">Edit</a> ||
-        <a href="http://">Delete</a> ||
+        
+           <a href="<?php echo BASE_URL;?>/Admin/editarticle/<?php echo $value['id'];?>">Edit</a>  ||
+           <a onclick="return confirm('Are you sure to delete!');"href="<?php echo BASE_URL;?>/Admin/deleteArticle/<?php echo $value['id'];?>">Delete</a>
+       
+
         </td>
 <?php }?>
 

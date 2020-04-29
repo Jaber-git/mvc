@@ -49,10 +49,12 @@ public function insertCategory(){
    
 }
 public function categoryList(){
+     $data     = array();
+    $table= "category";
+   
     $this->load->view('admin/header');
     $this->load->view('admin/sidebar');
-    $data     = array();
-    $table= "category";
+  
     $catModel = $this->load->model("CatModel");
     $data['cat'] = $catModel->catList($table);
     $this->load->view('admin/categorylist', $data);
@@ -181,12 +183,27 @@ if($input->submit()){
     
     $this->load->view('admin/addPost',$data);
     $this->load->view('admin/footer');
+      }
 }
+public function editArticle($id=null){
+    $data     = array();
+   $tablePost= "post";
+   $tableCat= "Category";
+  
+   $this->load->view('admin/header');
+   $this->load->view('admin/sidebar');
+   $postModel = $this->load->model("PostModel");
+   $data['postbyid'] = $postModel->PostById($tablePost,$id);
 
-
+   $catModel = $this->load->model("CatModel");
+   $data['catlist'] = $catModel->catList($tableCat);
+   
+   $this->load->view('admin/editpost', $data);
+   $this->load->view('admin/footer');
+}
     
 
-   }
+   
    public function articleList(){
     $tableCat = "category";
     $tablePost = "post";
