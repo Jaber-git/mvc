@@ -1,15 +1,49 @@
 <script src="http://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
 
 <h2>Add new Article</h2>
+<?php 
+if (isset($postErrors)){
+ echo '<div style="color:red;border:1px solid red;padding:5px 10px; margin:5px;">';
+ foreach($postErrors as $key =>$value){
+  switch($key){
+    case 'title':
+      foreach($value as $val){
+      echo "Title :".$val."<br/>";
+       }
+       break;
 
+    case 'content':
+        foreach($value as $val){
+        echo "Content :".$val."<br/>";
+         }
+       break;
+
+    case 'cat':
+      foreach($value as $val){
+        echo "Category :".$val."<br/>";
+        }
+        break;
+
+    default:
+        break;
+     }
+     }
+     
+  echo '</div>';
+
+  }
+
+
+
+?>
    
- <!--insertCategory method in index controller is action page-->
+
   <form action="<?php echo BASE_URL;?>/Admin/addNewPost" method="post">
   <table>
     
         <tr>
-        <td>Title</td>
-        <td><input id="postinput" type="text" id="fname" name="title"><br></td>
+        <td>Title</td> 
+        <td><input id="postinput" type="text"  name="title"></td>
         </tr>
          
         <tr>

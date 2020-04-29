@@ -128,17 +128,24 @@ public function deleteCat($id=NULL){
     $this->load->view('admin/addPost',$data);
     $this->load->view('admin/footer');
    }
+
    public function addNewPost(){
     $tablePost="post";
-    if(!$_POST['submit']){
-        header("Location:".BASE_URL."/Admin");
-    }else{
-
-    $title   = $_POST['title'];
-    $content = $_POST['content'];
-    $cat     = $_POST['cat'];
-
-     $data     = array(
+   $input= $this->load->validation("JForm");
+   $input->post('title')
+          ->isEmpty()
+          ->length(10,500);
+     $input->post('content')
+           ->isEmpty();
+     $input->post('cat')
+           ->isEmpty()
+           ->isCatEmpty();
+       
+if($input->submit()){
+    $title   = $input->values['title'];
+    $content =  $input->values['content'];
+    $cat     =  $input->values['cat'];
+    $data     = array(
               'title'   =>$title,
               'content' =>$content,
               'cat'     =>$cat
@@ -152,11 +159,25 @@ public function deleteCat($id=NULL){
      $mdata['msg']="Article added succesfully";
     }else{
         $mdata['msg']="Article Not added succesfully";
-
-    }
+       }
     $url=BASE_URL."/Admin/articleList?msg=".urlencode(serialize($mdata));
     header("Location:$url");
- }
+}else{
+    $data['postErrors']=$input->errors;
+    $tableCat="category";
+    $this->load->view('admin/header');
+    $this->load->view('admin/sidebar');
+
+    $catModel       = $this->load->model("CatModel");
+    $data['catlist'] = $catModel->catList($tableCat);
+    
+    $this->load->view('admin/addPost',$data);
+    $this->load->view('admin/footer');
+}
+
+
+    
+
    }
    public function articleList(){
     $tableCat = "category";
