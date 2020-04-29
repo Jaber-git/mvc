@@ -18,6 +18,11 @@
 	include './models/'.$modelName.'.php';
      return new $modelName();
 		}
+public function validation($modelName){
+		include './validation/'.$modelName.'.php';
+			 return new $modelName();
+				}
+
 
 
 	 
