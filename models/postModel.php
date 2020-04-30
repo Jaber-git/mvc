@@ -86,5 +86,14 @@ public function getPostById($tablePost,$tableCat,$id){
    public function insertPost($table,$data){
      return $this->db->insert($table,$data);
    }
+   
+public function updatePost($table,$data,$cond){
+  return  $this->db->update($table,$data,$cond);
+        }
+        
+ public function delPostById ( $table, $cond){
+  return  $this->db->delete($table,$cond);
+    }
+
 
 }

@@ -124,6 +124,9 @@ public function deleteCat($id=NULL){
 
    public function addArticle(){
        $tableCat="category";
+
+
+
     $this->load->view('admin/header');
     $this->load->view('admin/sidebar');
 
@@ -133,6 +136,45 @@ public function deleteCat($id=NULL){
     $this->load->view('admin/addPost',$data);
     $this->load->view('admin/footer');
    }
+   
+public function updatePost($id=NULL){
+
+    $cond="id=$id";
+    $tablePost="post";
+   $input= $this->load->validation("JForm");
+   $input->post('title')
+          ->isEmpty()
+          ->length(10,500);
+     $input->post('content')
+           ->isEmpty();
+     $input->post('cat')
+           ->isEmpty()
+           ->isCatEmpty();
+         
+           $title   = $input->values['title'];
+           $content =  $input->values['content'];
+           $cat     =  $input->values['cat'];
+           $data     = array(
+                     'title'   =>$title,
+                     'content' =>$content,
+                     'cat'     =>$cat
+                    );  
+  
+           
+    
+    $postModel = $this->load->model("PostModel");
+    $result   =  $postModel->updatePost($tablePost,$data,$cond);
+  
+    $mdata    =array();
+      if($result== 1){
+       $mdata['msg']="Article updated succesfully";
+      }else{
+          $mdata['msg']="Not updated succesfully";
+  
+      }
+      $url=BASE_URL."/Admin/articlelist?msg=".urlencode(serialize($mdata));
+      header("Location:$url"); 
+     }
 
    public function addNewPost(){
    //IF YOU TYPE URL admin/addarticle,see error
@@ -218,7 +260,24 @@ public function editArticle($id=null){
     
     $this->load->view('admin/postList',$data);
     $this->load->view('admin/footer');
-}
+    }
+    public function deleteArticle($id=NULL){
+        $table   ="category";
+        $cond     ="id=$id";
+        $postModel = $this->load->model("PostModel");
+        $result=  $postModel->delPostById($table,$cond);
+    
+        
+      $mdata    =array();
+      if($result== 1){
+       $mdata['msg']="Article deleted succesfully";
+      }else{
+          $mdata['msg']="Article Not deleted succesfully";
+    
+      }
+        $url=BASE_URL."/Admin/articlelist?msg=".urlencode(serialize($mdata));
+        header("Location:$url"); 
+    }
 
 }
 

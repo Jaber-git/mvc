@@ -46,7 +46,7 @@ foreach($postbyid as $key=>$value){
         <tr>
         <td></td>
         <td>  
-        <input type="submit" name="submit" value="Add Article">
+        <input type="submit" name="submit" value="Update Article">
         </td>
          
       </table>
