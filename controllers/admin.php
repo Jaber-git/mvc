@@ -49,7 +49,7 @@ public function insertCategory(){
    
 }
 public function categoryList(){
-     $data     = array();
+    $data     = array();
     $table= "category";
    
     $this->load->view('admin/header');
